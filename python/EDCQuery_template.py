@@ -50,6 +50,10 @@ header = {"Accept": "application/json"}
 itemCount = 0
 
 
+##########
+http(s)://<HostName>:<PortNumber>/access/2/catalog/data/search?q=com.infa.ldm.profiling.dataDomainsAll%3A*%20and%20core.Resource&facet=true&defaultFacets=true&highlight=false&offset=0&pageSize=
+20&enableLegacySearch=false&disableSemanticSearch=false&includeRefObjects=false
+
 def processItem(anItem, itemCount):
     '''
     put your code here - that does something with the item
