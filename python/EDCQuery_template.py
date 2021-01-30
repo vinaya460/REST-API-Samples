@@ -51,11 +51,29 @@ itemCount = 0
 
 
 ##########
-http(s)://<HostName>:<PortNumber>/access/2/catalog/data/search?q=com.infa.ldm.profiling.dataDomainsAll%3A*%20and%20core.Resource&facet=true&defaultFacets=true&highlight=false&offset=0&pageSize=
+http(s)://<HostName>:<PortNumber>/access/2/catalog/data/search?q=com.infa.ldm.profiling.dataDomainsAll%3A*%20and%20core.Resource&facet=true&defaultFacets=true
+                &highlight=false&offset=0&pageSize=
 20&enableLegacySearch=false&disableSemanticSearch=false&includeRefObjects=false
+ querystring = {
+        "q": "+com.infa.ldm.profiling.dataDomainsAll:*",
+        "offset": "0",
+        "pageSize": "1",
+        "hl": "false",
+        "related": "false",
+        "rootto": "false",
+        "facet.field": [
+            "core.classType",
+            "com.infa.ldm.profiling.dataDomainsInferred",
+            "com.infa.ldm.profiling.dataDomainsAll",
+            "com.infa.ldm.profiling.dataDomainsRejected",
+            "com.infa.ldm.profiling.dataDomainsAccepted",
+        ],
+        # "includeRefObjects": "false",
+    }
 
 
-querystring = "com.infa.ldm.profiling.dataDomainsAll:*  and core.resourceName:<resource_name>"+"&facet=true&defaultFacets=false&facetId=com.infa.ldm.profiling.dataDomainsAll&facetId=core.classType"
+query = "com.infa.ldm.profiling.dataDomainsAll:*  and core.resourceName:<resource_name> "+"&facet=true&defaultFacets=true"
+query+="&facetId=com.infa.ldm.profiling.dataDomainsAll&facetId=core.classType&&highlight=false&enableLegacySearch=false&disableSemanticSearch=false&includeRefObjects=false"
     
 
         
